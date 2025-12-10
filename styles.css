@@ -1,0 +1,176 @@
+:root {
+    /* primary colors */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-darck-blackinsh-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /* neutral colors */
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --light-gray: hsl(210, 46%, 95%);
+
+    /* text */
+    --font-base: 'barlow-semi-condensed', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+}
+
+.grid-container {
+    max-width: 1110px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* cards styles */
+.card {
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/*header styles */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.border-purple {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.user-info h3{
+    font-size: 0.9rem;
+}
+
+.user-info p {
+    font-size: 0.8rem;
+    opacity: 50%;
+}
+
+/*principal text styles */
+.card-lead {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    z-index: 2;
+    position: relative;
+}
+
+.card-quote {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 70%;
+}
+
+/* variants styles */
+
+/* Daniel card styles */
+.bg-purple {
+    background-color: var(--moderate-violet);
+    color: var(--white);
+
+/*background quote styles */
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top 0 right 15%;
+}
+
+.bg-purple .user-info p,
+.bg-purple .card-quote {
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Jonathan card styles */
+.bg-gray {
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+}
+
+/* Jeanette and Kira card styles */
+.bg-white {
+    background-color: var(--white);
+    color: var(--very-darck-blackinsh-blue);
+}
+
+/* pattrick card styles */
+.bg-black-blue {
+    background-color: var(--very-darck-blackinsh-blue);
+    color: var(--white);
+}
+
+/* grid styles */
+@media (min-width: 1000px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 1.8rem;
+        margin: auto;
+        max-width: 1300px;
+    }
+
+    .bg-purple {
+        background-position: top 0 right 18%;
+    }
+
+ /* POSITIONING OF CARDS */
+ /* Daniel card */
+    .card:nth-child(1) {
+        grid-column: span 2;
+    }
+/* Jonathan card */
+    .card:nth-child(2) {
+        grid-column: span 1;
+    }
+/* Jeanette card */
+    .card:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+/* Patrick card */
+    .card:nth-child(4) {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+/* Kira card */
+    .card:nth-child(5) {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+    }
+}
+
+.attribution {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--very-dark-grayish-blue);
+}
+.attribution a { color: var(--moderate-violet); font-weight: 700; text-decoration: none; 
+}
